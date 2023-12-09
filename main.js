@@ -133,9 +133,9 @@ function update() {
     hCM.style.top = "-1000px";
 }
 function donotUpdate() {
-    inputEmail = email.href;
-    inputContactNo = contactNo.href;
-    inputLinkedIn = linkedIn.href;
+    inputEmail.value = email.href;
+    inputContactNo.value = contactNo.href;
+    inputLinkedIn.value = linkedIn.href;
     hCM.style.top = "-1000px";
 }
 function editLinks_Funct() {
