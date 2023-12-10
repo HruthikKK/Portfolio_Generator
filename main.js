@@ -13,7 +13,7 @@ for (const element of nameField) {
 }
 
 //aboutMe
-const about = document.querySelector("#about");
+const about = document.querySelector("#about .content");
 const aAS_Btn = document.querySelector("#about .aAS_Btn");
 const hAS = document.querySelector("#about .hAS")
 const addASection = document.querySelector("#about .hAS .submit")
@@ -69,7 +69,7 @@ about.addEventListener('click', (event) => {
 
 
 //projects
-const projects = document.querySelector("#projects");
+const projects = document.querySelector("#projects .content .flexContainer");
 const aPS_Btn = document.querySelector("#projects .aPS_Btn");
 const hPS = document.querySelector("#projects .hPS")
 const addPSection = document.querySelector("#projects .hPS .submit")
@@ -161,6 +161,7 @@ editLinks_Btn.addEventListener('click',editLinks_Funct,true);
 
 
 //Download
+const download = document.querySelector("#download");
 const downloadHTML = document.querySelector("#download #downloadHTML a");
 const html = document.querySelector('html');
 function downloadHTML_Funct() {
@@ -181,6 +182,8 @@ function downloadHTML_Funct() {
     for(element of d_Btn){
         element.remove();
     }
+
+    download.remove();
 
     const textContent = html.outerHTML;
 
