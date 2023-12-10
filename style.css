@@ -79,13 +79,13 @@ nav ul li a:hover {
     font-size: 1.2rem;
     padding: 7px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 70px;
+    right: 50px;
     border: none;
     border-radius: 10px;
 }
 .hAS{
-    width: 400px;
+    width: 350px;
     height: 400px;
     position: absolute;
     top: -1000px;
@@ -94,13 +94,13 @@ nav ul li a:hover {
     background-color: #807f7f;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    font-size: 1rem;
-    line-height: 2rem;
+    padding: 15px;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
     align-items: center;
 }
 .hPS{
-    width: 400px;
+    width: 350px;
     height: 400px;
     margin: 0 auto;
     position: absolute;
@@ -112,12 +112,12 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
     align-items: center;
 }
 .hCM{
-    width: 400px;
+    width: 350px;
     height: 400px;
     margin: 0 auto;
     position: absolute;
@@ -129,8 +129,8 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
     align-items: center;
 }
 .hAS :is(input,textarea), .hPS :is(input,textarea), .hCM :is(input){
@@ -140,7 +140,9 @@ nav ul li a:hover {
     margin-top: 10px;
     padding: 5px;
 }
-
+.note{
+    font-size: 12px;
+}
 
 @media screen and (min-width:600px) {
     header h1{
@@ -160,11 +162,41 @@ nav ul li a:hover {
         font-size: 1.5rem;
         padding: 10px;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 100px;
+        right: 100px;
         border: none;
         border-radius: 15px;
     }
+
+    .hAS{
+        width: 350px;
+        height: 400px;
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .hPS{
+        width: 350px;
+        height: 450px;       
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .hCM{
+        width: 350px;
+        height: 450px;
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .hAS :is(input,textarea), .hPS :is(input,textarea), .hCM :is(input){
+        width: 100%;
+    }
+    .hAS button, .hPS button, .hCM button{
+        margin-top: 10px;
+        padding: 5px;
+    }
+
 }
 /* Individual section styles */
 .home {
@@ -183,8 +215,8 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     background-color: #3498db;
-    min-height: 600px;
-    padding: 50px 70px;
+    min-height: 100vh;
+    padding: 100px 70px;
 }
 .about .content{
     display: flex;
@@ -215,21 +247,27 @@ nav ul li a:hover {
 }
 /* ------------------------ */
 .projects {
-    display: flex;
-    flex-direction: column;
     background-color: #27ae60;
     margin: 0;
-    min-height: 600px;
-    padding: 50px 60px;
+    min-height: 100vh;
+    padding: 100px 30px;
+}
+.project .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .projects .content h1{
     font-size: 1.2rem;
 }
 
 .projects .PS{
-    width: 500px;
+    min-width: 400px;
     border: 5px solid;
-    margin: 15px;
+    margin: 15px auto;
+    padding: 10px;
 }
 .projects .PS>h3{
     margin-top: 20px;
@@ -257,7 +295,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     background-color: #e74c3c;
-    min-height: 600px;
+    min-height: 100vh;
     padding: 50px 70px;
 }
 .contact .content{
@@ -298,11 +336,33 @@ nav ul li a:hover {
 
 /* ----------------- */
 .download{
-    min-height: 600px;
+    padding: 100px 30px;
+    background-image: url(./homeBG.jpg);
+}
+.download .content {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+.download .content :is(a,a:visited){
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    border: 5px solid;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #ffffff3b;
+    backdrop-filter: blur(10px);
+}
+.download .content a:hover{
+    background-color: #ffffff86;
+    backdrop-filter: blur(10px);
 }
 
+
 footer {
-    background-color: #222;
+    background-color: #ffffff3b;
+    backdrop-filter: blur(10px);
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -324,11 +384,14 @@ footer {
     }
     header nav{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
     }
     /* ------------------ */
+    .about{
+        padding: 120px 70px;
+    } 
     .about .content h1{
         font-size: 2rem;
     }
@@ -340,16 +403,18 @@ footer {
     }
 
     /* ------------------ */
-    .projects .flexContainer{
+    .projects{
+        padding: 120px 70px;
+    }
+    .projects .gridContainer{
         display: flex;
-        justify-content: space-evenly;
         flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
     }
     .projects .content h1{
         font-size: 2rem;
-    }
-    .projects .PS{
-        padding: 16px;
     }
     .projects .content .PS h3{
         font-size: 1.3rem;
@@ -369,8 +434,10 @@ footer {
         font-size: 1.1rem;
     }
     .contact .current a{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
-
+    .download .content :is(a,a:visited){
+        font-size: 20px;
+    }
 }

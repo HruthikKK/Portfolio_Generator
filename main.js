@@ -54,7 +54,7 @@ addASection.addEventListener('click',aAS_Funct);
 closeASection.addEventListener('click',rAS_Funct);
 
 aAS_Btn.addEventListener('click', () => {
-    hAS.style.top = "100px";
+    hAS.style.top = "200px";
 })
     
 
@@ -69,7 +69,7 @@ about.addEventListener('click', (event) => {
 
 
 //projects
-const projects = document.querySelector("#projects .content .flexContainer");
+const projects = document.querySelector("#projects .content .gridContainer");
 const aPS_Btn = document.querySelector("#projects .aPS_Btn");
 const hPS = document.querySelector("#projects .hPS")
 const addPSection = document.querySelector("#projects .hPS .submit")
@@ -116,7 +116,7 @@ addPSection.addEventListener('click',aPS_Funct,true);
 closePSection.addEventListener('click',rPS_Funct,true);
 
 aPS_Btn.addEventListener('click', () => {
-    hPS.style.top = "100px";
+    hPS.style.top = "200px";
 })
     
 projects.addEventListener('click', (event) => {
@@ -155,14 +155,14 @@ submit.addEventListener('click',update,true);
 close.addEventListener('click',donotUpdate,true);
 
 function editLinks_Funct() {
-    hCM.style.top = "100px";
+    hCM.style.top = "200px";
 }
 editLinks_Btn.addEventListener('click',editLinks_Funct,true);
 
 
 //Download
 const download = document.querySelector("#download");
-const downloadHTML = document.querySelector("#download #downloadHTML a");
+const downloadHTML = document.querySelector("#download #downloadHTML");
 const html = document.querySelector('html');
 function downloadHTML_Funct() {
 
