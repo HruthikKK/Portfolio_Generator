@@ -25,9 +25,9 @@
         <div class="content">
             <h1>Welcome to My Portfolio</h1>
             <p>Hi there! I'm <span class="name">MyName</span>.</p>
-        </div>
+        <!-- </div>
         <img src="./profileImg.jpg">
-        </div>
+        </div> -->
     </section>
 
     <section id="about" class="section about">
@@ -51,6 +51,7 @@
             <label for="addS_Description">Description
             </label>
             <textarea name="description" id="addS_Description" maxlength="200" rows="5" cols="">Descripiton...</textarea>
+            <div class="alert"></div>
             <button class="submit">Add</button>
             <button class="close">Close</button>
         </div>
@@ -80,8 +81,12 @@
                 <label for="addS_Link">Project_Link
                 </label>
                 <input type="text" id="addS_Link">
+                <div class="alert"></div>
                 <button class="submit">Add</button>
                 <button class="close">Close</button>
+                <div class="note">
+                    Donot paste link starting with 'https://' just paste the link after https protocol ex 'hruthikkk.github.io/FB2005-Clone/'
+                </div>
             </div>
             <!-- Add your project showcases here -->
         </div>
@@ -107,10 +112,21 @@
                 <input type="text" id="linkedIn">
                 <button class="submit">Add</button>
                 <button class="close">Close</button>
+                <div class="note">
+                    1.Just input mailId ex : "abc@gmail.com"
+                    2.Contact No shd be 10 digits(Indian Phone No. supported)
+                    3.Just copy LinkedIn profile link without https:// 
+                </div>
             </div>
         </div>
     </section>
 
+    <section id="download" class="section download">
+            <div class="content">
+                <button><a href="./style.css" download="style.css" target="_blank">CSS File</a></button>
+                <button id="downloadHTML"><a href="">HTML File</a></button>
+            </div>
+    </section>
     <footer>
         <p>&copy; 2023 My Portfolio</p>
     </footer>

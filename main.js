@@ -18,10 +18,16 @@ const aAS_Btn = document.querySelector("#about .aAS_Btn");
 const hAS = document.querySelector("#about .hAS")
 const addASection = document.querySelector("#about .hAS .submit")
 const closeASection = document.querySelector("#about .hAS .close")
-
+const hiddenASectionAlert = document.querySelector("#about .hAS .alert")
 function aAS_Funct() {
     const inputHeading = document.querySelector(".hAS #addS_Heading");
     const inputDescription = document.querySelector(".hAS #addS_Description");
+    
+    if(inputHeading.value === "" ||inputDescription.value ===""){
+        hiddenASectionAlert.textContent = "Fill all fields";
+        return;
+    }
+
     const newSection = document.createElement('div');
     newSection.classList.add('AMS');
     const sectionHeading = document.createElement('h3');
@@ -37,19 +43,20 @@ function aAS_Funct() {
     about.appendChild(newSection);
     inputHeading.value = "";
     inputDescription.value = "Description...";
+    hiddenASectionAlert.textContent = "";
     hAS.style.top = "-1000px";
 }
 function rAS_Funct() {
     hAS.style.top = "-1000px";
 }
+
+addASection.addEventListener('click',aAS_Funct);
+closeASection.addEventListener('click',rAS_Funct);
+
 aAS_Btn.addEventListener('click', () => {
     hAS.style.top = "100px";
-    addASection.addEventListener('click',aAS_Funct,true);
-    closeASection.addEventListener('click',rAS_Funct,true);
 })
     
-addASection.removeEventListener('click',aAS_Funct,true);
-closeASection.removeEventListener('click',rAS_Funct,true);
 
 about.addEventListener('click', (event) => {
     const element = event.target;
@@ -67,11 +74,17 @@ const aPS_Btn = document.querySelector("#projects .aPS_Btn");
 const hPS = document.querySelector("#projects .hPS")
 const addPSection = document.querySelector("#projects .hPS .submit")
 const closePSection = document.querySelector("#projects .hPS .close")
+const hiddenPSectionAlert = document.querySelector("#projects .hPS .alert")
 
 function aPS_Funct() {
     const inputHeading = document.querySelector(".hPS #addS_Heading");
     const inputDescription = document.querySelector(".hPS #addS_Description");
     const inputLink = document.querySelector(".hPS #addS_Link");
+    
+    if(!inputHeading.value || !inputDescription || !inputLink){
+        hiddenPSectionAlert.textContent = "Fill all fields";
+        return;
+    }
     const newSection = document.createElement('div');
     newSection.classList.add('PS');
     const sectionHeading = document.createElement('h3');
@@ -79,7 +92,7 @@ function aPS_Funct() {
     const sectionDescription = document.createElement('p');
     sectionDescription.textContent = inputDescription.value;
     const sectionLink = document.createElement('a');
-    sectionLink.href = inputLink.value;
+    sectionLink.href = `https://${inputLink.value}`;
     sectionLink.textContent = "project_Link"
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
@@ -92,20 +105,20 @@ function aPS_Funct() {
     inputHeading.value = "";
     inputDescription.value = "Description...";
     inputLink.value = "";
+    hiddenPSectionAlert.textContent = "";
     hPS.style.top = "-1000px";
 }
 function rPS_Funct() {
     hPS.style.top = "-1000px";
+
 }
+addPSection.addEventListener('click',aPS_Funct,true);
+closePSection.addEventListener('click',rPS_Funct,true);
+
 aPS_Btn.addEventListener('click', () => {
     hPS.style.top = "100px";
-    addPSection.addEventListener('click',aPS_Funct,true);
-    closePSection.addEventListener('click',rPS_Funct,true);
 })
     
-addPSection.removeEventListener('click',aPS_Funct,true);
-closePSection.removeEventListener('click',rPS_Funct,true);
-
 projects.addEventListener('click', (event) => {
     const element = event.target;
     if(element.classList.contains('delete')){
@@ -138,10 +151,43 @@ function donotUpdate() {
     inputLinkedIn.value = linkedIn.href;
     hCM.style.top = "-1000px";
 }
+submit.addEventListener('click',update,true);
+close.addEventListener('click',donotUpdate,true);
+
 function editLinks_Funct() {
     hCM.style.top = "100px";
-
-    submit.addEventListener('click',update,true);
-    close.addEventListener('click',donotUpdate,true);
 }
 editLinks_Btn.addEventListener('click',editLinks_Funct,true);
+
+
+//Download
+const downloadHTML = document.querySelector("#download #downloadHTML a");
+const html = document.querySelector('html');
+function downloadHTML_Funct() {
+
+    //removing hidden sectin
+    hAS.remove();
+    hPS.remove();
+    hCM.remove();
+
+    //removing addSection buttons
+    aAS_Btn.remove();
+    aPS_Btn.remove();
+    editLinks_Btn.remove();
+
+    //removing delete buttons
+    const d_Btn = document.querySelectorAll('.delete');
+
+    for(element of d_Btn){
+        element.remove();
+    }
+
+    const textContent = html.outerHTML;
+
+    const blob = new Blob([textContent], { type: "text/plain" });
+
+      downloadHTML.download = "index.html"; // File name when downloaded
+      downloadHTML.href = URL.createObjectURL(blob);
+    //   downloadHTML.click(); -> extra download
+}
+downloadHTML.addEventListener('click',downloadHTML_Funct);
