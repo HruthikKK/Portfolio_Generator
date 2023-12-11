@@ -10,6 +10,9 @@ ul {
     list-style: none;
     font-family: sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* Basic styles */
 header {
     background-color: #ffffff3b;
