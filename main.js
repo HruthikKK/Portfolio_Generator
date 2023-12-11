@@ -22,7 +22,6 @@ const hiddenASectionAlert = document.querySelector("#about .hAS .alert")
 function aAS_Funct() {
     const inputHeading = document.querySelector(".hAS #addS_Heading");
     const inputDescription = document.querySelector(".hAS #addS_Description");
-    
     if(inputHeading.value === "" ||inputDescription.value ===""){
         hiddenASectionAlert.textContent = "Fill all fields";
         return;
@@ -69,7 +68,7 @@ about.addEventListener('click', (event) => {
 
 
 //projects
-const projects = document.querySelector("#projects .content .gridContainer");
+const projects = document.querySelector("#projects .content .flexContainer");
 const aPS_Btn = document.querySelector("#projects .aPS_Btn");
 const hPS = document.querySelector("#projects .hPS")
 const addPSection = document.querySelector("#projects .hPS .submit")
@@ -146,9 +145,6 @@ function update() {
     hCM.style.top = "-1000px";
 }
 function donotUpdate() {
-    inputEmail.value = email.href;
-    inputContactNo.value = contactNo.href;
-    inputLinkedIn.value = linkedIn.href;
     hCM.style.top = "-1000px";
 }
 submit.addEventListener('click',update,true);

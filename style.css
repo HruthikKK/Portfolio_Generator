@@ -10,7 +10,6 @@ ul {
     list-style: none;
     font-family: sans-serif;
 }
-
 /* Basic styles */
 header {
     background-color: #ffffff3b;
@@ -39,7 +38,7 @@ nav .name{
     border-radius: 10px;
 }
 .name:hover{
-    background-color: #c2c2c256;
+    background-color: #537afb;
 }
 nav ul {
     display: flex;
@@ -57,7 +56,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #507dee;
+    color: #668aff;
 }
 
 .section {
@@ -72,8 +71,7 @@ nav ul li a:hover {
 .content {
     /* max-width: 800px; */
     margin: 0 auto;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
 }
 .aAS_Btn, .aPS_Btn,.editLinks_Btn{
     font-size: 1.2rem;
@@ -83,6 +81,13 @@ nav ul li a:hover {
     right: 50px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.aAS_Btn:hover, .aPS_Btn:hover,.editLinks_Btn:hover {
+    color: #fff;
+    background-color: rgb(64, 109, 255)
+
 }
 .hAS{
     width: 350px;
@@ -90,8 +95,8 @@ nav ul li a:hover {
     position: absolute;
     top: -1000px;
     margin: 0 auto;
-    border: 5px solid white;
-    background-color: #807f7f;
+    border-radius: 15px;
+    background-color: #5276ee;
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -107,8 +112,8 @@ nav ul li a:hover {
     top: -1000px;
     left: 0;
     right: 0;
-    border: 5px solid white;
-    background-color: #807f7f;
+    border-radius: 15px;
+    background-color: #5276ee;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -124,8 +129,8 @@ nav ul li a:hover {
     top: -1000px;
     left: 0;
     right: 0;
-    border: 5px solid white;
-    background-color: #807f7f;
+    border-radius: 15px;
+    background-color: #5276ee;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -138,7 +143,14 @@ nav ul li a:hover {
 }
 .hAS button, .hPS button, .hCM button{
     margin-top: 10px;
-    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 14px;
+    transition: all 0.1s ease;
+}
+.hAS button:hover, .hPS button:hover, .hCM button:hover{
+    background-color: #959595;
 }
 .note{
     font-size: 12px;
@@ -199,13 +211,15 @@ nav ul li a:hover {
 
 }
 /* Individual section styles */
+/* label of all hidden section */
+label{
+    font-weight: bold;
+}
 .home {
-    background-image: url(./homeBG.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     font-size: 1rem;
     height: 100vh;
+    color: #fff;
+    background-color: #19191a;
 }
 
 .home h1 {
@@ -214,7 +228,8 @@ nav ul li a:hover {
 .about {
     display: flex;
     flex-direction: column;
-    background-color: #3498db;
+    background-color: #19191ae4;
+    color: rgba(255, 255, 255, 0.902); 
     min-height: 100vh;
     padding: 100px 70px;
 }
@@ -228,26 +243,38 @@ nav ul li a:hover {
 }
 .about .content h1{
     font-size: 1.2rem;
-
 }
 .about .AMS{
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgb(100, 100, 100);
 }
 .about .AMS>h3{
     margin-top: 20px;
     font-size: 1rem;
-
+    color: #668aff;
 }
 .about .AMS p{
     font-size: 0.8rem;
 }
 .about .AMS>button{
     margin: 10px;
-    font-size: 0.8rem;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+.about .AMS>button:hover{
+    color: #fff;
+    background-color: rgb(64, 109, 255)
 }
 /* ------------------------ */
 .projects {
-    background-color: #27ae60;
+    /* background-image: url(./homeBG.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+    background-color: #19191aca;
+    color: rgba(255, 255, 255, 0.902); 
     margin: 0;
     min-height: 100vh;
     padding: 100px 30px;
@@ -264,14 +291,17 @@ nav ul li a:hover {
 }
 
 .projects .PS{
-    min-width: 400px;
-    border: 5px solid;
+    min-width: 300px;
+    max-width: 700px;
+    background-color: #616161;
+    border-radius: 10px;
     margin: 15px auto;
     padding: 10px;
 }
 .projects .PS>h3{
     margin-top: 20px;
     font-size: 1rem;
+    color: #fff;
 }
 .projects .PS p{
     font-size: 0.8rem;
@@ -279,22 +309,33 @@ nav ul li a:hover {
 .projects .PS :is(a,a:visited){
     display: block;
     text-decoration: none;
-    color: #1954ea;
+    color: #241dff;
+    font-weight: bold;
+    font-size: 0.8rem;
 }
 .projects .PS> :is(a:hover){
     text-decoration: underline;
-    color: #1954ea;
+    color: #443ef5;
 }
 .projects .PS>button{
     margin: 10px;
-    font-size: 0.8rem;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 14px;
+    transition: all 0.4s ease;
+}
+.projects .PS>button:hover{
+    color: #fff;
+    background-color: rgb(64, 109, 255)
 }
 
 /* ------------------------------- */
 .contact {
     display: flex;
     flex-direction: column;
-    background-color: #e74c3c;
+    background-color: #19191ab9;
+    color: #fff;
     min-height: 100vh;
     padding: 50px 70px;
 }
@@ -310,34 +351,27 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 .contact .content p{
-    font-size: 1rem;
+    font-size: 0.8rem;
+}
+.content .current{
+    margin: 20px;
 }
 .contact .current :is(a,a:visited){
     display: block;
     text-decoration: none;
-    color: #1954ea;
-}
-.contact .current :is(a:hover){
-    text-decoration: underline;
-    color: #1954ea;
-}
-.about .AMS>h3{
-    margin-top: 20px;
+    color: #241dff;
+    font-weight: bold;
     font-size: 1rem;
-
 }
-.about .AMS p{
-    font-size: 0.8rem;
-}
-.about .AMS>button{
-    margin: 10px;
-    font-size: 0.8rem;
+.contact .current> :is(a:hover){
+    text-decoration: underline;
+    color: #443ef5;
 }
 
 /* ----------------- */
 .download{
+    background-color: #19191aab;
     padding: 100px 30px;
-    background-image: url(./homeBG.jpg);
 }
 .download .content {
     display: flex;
@@ -348,14 +382,14 @@ nav ul li a:hover {
     color: white;
     font-size: 15px;
     text-decoration: none;
-    border: 5px solid;
+    border: 3px solid #fff;
     border-radius: 5px;
     padding: 5px;
-    background-color: #ffffff3b;
+    background-color: #241dff;
     backdrop-filter: blur(10px);
 }
 .download .content a:hover{
-    background-color: #ffffff86;
+    background-color: #443ef5;
     backdrop-filter: blur(10px);
 }
 
@@ -401,14 +435,17 @@ footer {
     .about .content .AMS p{
         font-size: 1.1rem;
     }
+    .about .content .AMS button{
+        padding: 4px;
+    }
 
     /* ------------------ */
     .projects{
         padding: 120px 70px;
     }
-    .projects .gridContainer{
+    .projects .flexContainer{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         gap: 10px;
@@ -422,6 +459,12 @@ footer {
     .projects .content .PS p{
         font-size: 1.1rem;
     }
+    .projects .content .PS a{
+        font-size: 1.1rem;
+    }
+    .projects .content .PS button{
+        padding: 4px;
+    }
 
     /* ------------------------- */
     .contact .content h1{
@@ -433,7 +476,10 @@ footer {
     .contact .content p{
         font-size: 1.1rem;
     }
-    .contact .current a{
+    .contact .current{
+        margin: 30px;
+    }
+    .contact .current :is(a,a:visited){
         font-size: 1.4rem;
     }
     
