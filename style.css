@@ -13,7 +13,10 @@ ul {
 html{
     scroll-behavior: smooth;
 }
+
 /* Basic styles */
+
+/* Header */
 header {
     background-color: #ffffff3b;
     backdrop-filter: blur(10px);
@@ -24,12 +27,6 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px;
 }
-header h1{
-    font-size: 1.2rem;
-}
-header nav ul li{
-    font-size: 0.8rem;
-}
 nav{
     display: flex;
     justify-content: space-between;
@@ -37,10 +34,11 @@ nav{
     padding: 7px 5px;
 }
 nav .name{
+    font-size: 1.2rem;
     padding: 10px;
     border-radius: 10px;
 }
-.name:hover{
+nav .name:hover{
     background-color: #537afb;
 }
 nav ul {
@@ -49,6 +47,7 @@ nav ul {
 }
 
 nav ul li {
+    font-size: 0.8rem;
     margin-right: 20px;
 }
 
@@ -62,6 +61,7 @@ nav ul li a:hover {
     color: #668aff;
 }
 
+/* applied to all parts */
 .section {
     text-align: center;
     position: relative;
@@ -70,12 +70,10 @@ nav ul li a:hover {
     justify-content: center;
     overflow: hidden;
 }
-
 .content {
-    /* max-width: 800px; */
     margin: 0 auto;
-    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
 }
+/* add .div Btn for About,Project, Contact Sections */
 .aAS_Btn, .aPS_Btn,.editLinks_Btn{
     font-size: 1.2rem;
     padding: 7px;
@@ -92,39 +90,12 @@ nav ul li a:hover {
     background-color: rgb(64, 109, 255)
 
 }
+
+/* hidden Sections */
 .hAS{
-    width: 350px;
-    height: 400px;
-    position: absolute;
-    top: -1000px;
-    margin: 0 auto;
-    border-radius: 15px;
-    background-color: #5276ee;
-    display: flex;
-    flex-direction: column;
     padding: 15px;
-    font-size: 0.8rem;
-    line-height: 1.6rem;
-    align-items: center;
 }
-.hPS{
-    width: 350px;
-    height: 400px;
-    margin: 0 auto;
-    position: absolute;
-    top: -1000px;
-    left: 0;
-    right: 0;
-    border-radius: 15px;
-    background-color: #5276ee;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    font-size: 0.8rem;
-    line-height: 1.6rem;
-    align-items: center;
-}
-.hCM{
+.hAS,.hPS,.hCM{
     width: 350px;
     height: 400px;
     margin: 0 auto;
@@ -155,12 +126,13 @@ nav ul li a:hover {
 .hAS button:hover, .hPS button:hover, .hCM button:hover{
     background-color: #959595;
 }
+/* for all hidden sections */
 .note{
     font-size: 12px;
 }
 
 @media screen and (min-width:600px) {
-    header h1{
+    header .name{
         padding: 10px;
         font-size: 2rem;
     }
@@ -183,32 +155,14 @@ nav ul li a:hover {
         border-radius: 15px;
     }
 
-    .hAS{
+    .hAS, .hPS, .hCM{
         width: 350px;
         height: 400px;
         padding: 20px;
         font-size: 1rem;
         line-height: 2rem;
     }
-    .hPS{
-        width: 350px;
-        height: 450px;       
-        padding: 20px;
-        font-size: 1rem;
-        line-height: 2rem;
-    }
-    .hCM{
-        width: 350px;
-        height: 450px;
-        padding: 20px;
-        font-size: 1rem;
-        line-height: 2rem;
-    }
-    .hAS :is(input,textarea), .hPS :is(input,textarea), .hCM :is(input){
-        width: 100%;
-    }
     .hAS button, .hPS button, .hCM button{
-        margin-top: 10px;
         padding: 5px;
     }
 
@@ -218,16 +172,18 @@ nav ul li a:hover {
 label{
     font-weight: bold;
 }
+/* Home */
 .home {
     font-size: 1rem;
     height: 100vh;
     color: #fff;
     background-color: #19191a;
 }
-
 .home h1 {
     font-size: 1.2rem;
 }
+
+/* About Me */
 .about {
     display: flex;
     flex-direction: column;
@@ -271,12 +227,9 @@ label{
     color: #fff;
     background-color: rgb(64, 109, 255)
 }
-/* ------------------------ */
+
+/* Projects */
 .projects {
-    /* background-image: url(./homeBG.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; */
     background-color: #19191aca;
     color: rgba(255, 255, 255, 0.902); 
     margin: 0;
@@ -300,10 +253,9 @@ label{
     background-color: #616161;
     border-radius: 10px;
     margin: 15px auto;
-    padding: 10px;
+    padding: 20px;
 }
 .projects .PS>h3{
-    margin-top: 20px;
     font-size: 1rem;
     color: #fff;
 }
@@ -313,7 +265,7 @@ label{
 .projects .PS :is(a,a:visited){
     display: block;
     text-decoration: none;
-    color: #241dff;
+    color: #0600a7;
     font-weight: bold;
     font-size: 0.8rem;
 }
@@ -334,7 +286,7 @@ label{
     background-color: rgb(64, 109, 255)
 }
 
-/* ------------------------------- */
+/* Contact Me */
 .contact {
     display: flex;
     flex-direction: column;
@@ -362,17 +314,18 @@ label{
 }
 .contact .current :is(a,a:visited){
     display: block;
+    color: white;
+    font-size: 15px;
     text-decoration: none;
-    color: #241dff;
-    font-weight: bold;
-    font-size: 1rem;
+    border-radius: 5px;
+    padding: 5px;
 }
 .contact .current> :is(a:hover){
     text-decoration: underline;
-    color: #443ef5;
+    color: #ffffff82;
 }
 
-/* ----------------- */
+/* Download Section */
 .download{
     background-color: #19191aab;
     padding: 100px 30px;
@@ -390,14 +343,12 @@ label{
     border-radius: 5px;
     padding: 5px;
     background-color: #241dff;
-    backdrop-filter: blur(10px);
 }
 .download .content a:hover{
     background-color: #443ef5;
     backdrop-filter: blur(10px);
 }
-
-
+/* footer */
 footer {
     background-color: #ffffff3b;
     backdrop-filter: blur(10px);
@@ -411,20 +362,11 @@ footer {
 }
 
 @media screen and (min-width:600px) {
-    .home h1{
-        font-size: 2rem;
-    }
     .home{
         font-size: 1.2rem;
     }
-    header nav ul a{
-        font-size: 1rem;
-    }
-    header nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
+    .home h1{
+        font-size: 2rem;
     }
     /* ------------------ */
     .about{
@@ -443,7 +385,7 @@ footer {
         padding: 4px;
     }
 
-    /* ------------------ */
+    /* Projects */
     .projects{
         padding: 120px 70px;
     }
@@ -470,7 +412,7 @@ footer {
         padding: 4px;
     }
 
-    /* ------------------------- */
+    /* Download */
     .contact .content h1{
         font-size: 2rem;
     }
@@ -484,9 +426,9 @@ footer {
         margin: 30px;
     }
     .contact .current :is(a,a:visited){
-        font-size: 1.4rem;
+        font-size: 26px;
     }
-    
+    /* Download */
     .download .content :is(a,a:visited){
         font-size: 20px;
     }
